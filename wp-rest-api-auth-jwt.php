@@ -105,5 +105,19 @@ class wprestapi
         return $this->sendRequest('POST', $endpoint, $send_data_body);
     }
 
+    public function testPost2()
+    {
+        $endpoint = '/posts';
+
+        $time = new DateTime("now");
+        $article['title'] = 'テストタイトル';
+        $article['content'] = 'コンテンツの中身';
+        $article['status'] = 'draft';
+        $article['categories'] = '1';
+        $send_data_body = $article;
+
+        return $this->sendRequest('POST', $endpoint, $send_data_body);
+    }
+
     /* -------------------------------------------- */
 }
